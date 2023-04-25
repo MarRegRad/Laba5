@@ -1,1 +1,1 @@
-# Labar5
+# Laba5
