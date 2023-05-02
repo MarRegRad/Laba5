@@ -13,14 +13,14 @@ def recursive_f(n):         # рекурсивное решение
     else:
         return (factorial(n-1)) - recursive_f(n-5)
 
-def iterative_f(n):     #итерационное решение
-    if n < 2:
-        return 5
-    else:
-        result = 1
-        for i in range(1, n):
-            result *= i
-        return result - iterative_f(n-5)
+def iterative_f(n):         # итерационное решение
+    fn = [5] * (n + 1)
+    f = 1
+    for i in range(2, n):
+        f *= i
+    for i in range(5, n + 1):
+        fn[i] = f + fn[i - 5]
+    return fn[n]
 
 try:
     print("Введите натуральное число n >= 1")
